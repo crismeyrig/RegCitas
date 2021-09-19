@@ -5,8 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegCitas"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Registro de Citas" Height="400" Width="400" WindowStartupLocation="CenterScreen"  ResizeMode="CanMinimize">
     <Grid>
+        <StackPanel>
+            <Menu Height="24" FontSize="15">
+                <MenuItem Header="Registros">
+                    <MenuItem x:Name="rCitasMenuItem" Click="rCitasMenuItem_Click" Header="Agendar Cita">
+                        <MenuItem.Icon>
+                            <Image Source="/anadir.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="Consultas">
+                    <MenuItem x:Name="cUsuariosMenuItem" Click="cUsuariosMenuItem_Click" Header="Consultar Citas">
+                        <MenuItem.Icon>
+                            <Image Source="/boton-buscar-en-carpeta.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+                </MenuItem>
+            </Menu>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image Source="/Imagenes/HomeUser.png" Width="90"/>
+                <Label Content="Bienvenido" FontWeight="Bold" Height="50" FontSize="36" HorizontalAlignment="Center" />
+                <Image Source="" Height="250" Width="322" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </StackPanel>
+
 
     </Grid>
 </Window>

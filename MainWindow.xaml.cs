@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using RegCitas.UI.Consultas;
+using RegCitas.UI.Registros;
 
 namespace RegCitas
 {
@@ -19,10 +9,31 @@ namespace RegCitas
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
+    { 
+     protected override void OnClosed(EventArgs e)
     {
+        base.OnClosed(e);
+        Application.Current.Shutdown();
+    }
         public MainWindow()
         {
             InitializeComponent();
+        }
+        private void rCitasMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            rCitas rCitas1 = new rCitas();
+            rCitas1.Show();
+
+        }
+        private void cUsuariosMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            cCitas cCitas1 = new cCitas();
+            cCitas1.Show();
+
+        }
+        private void AyudaMenu_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

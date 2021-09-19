@@ -1,0 +1,68 @@
+﻿<Window x:Class="RegCitas.UI.Registros.rCitas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RegCitas.UI.Registros"
+        mc:Ignorable="d"
+        Title="Registro de citas" Height="530" Width="510" WindowStartupLocation="CenterScreen"   ResizeMode="CanMinimize">
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" >
+
+            <Label Content="Cita Id" FontWeight="Bold" FontSize="16"/>
+            <!--——————————————————————————————————————————————[ BUSCAR ]——————————————————————————————————————————————-->
+            <StackPanel Orientation="Horizontal" Height="35">
+                <TextBox x:Name="CitaIdTextBox" Text="{Binding CitaId}" Width="200" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center"/>
+                <Button x:Name="BuscarButton" Margin="80,0,0,0" Width="120" Click="BuscarButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/UI/Registros/boton-buscar-en-carpeta.png"/>
+                        <Label Content="Buscar" FontSize="17" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <!--——————————————————————————————————————————————[ Nombres ]——————————————————————————————————————————————-->
+            <Label Content="Nombres" FontWeight="Bold" Margin="0,0,10,0"/>
+            <TextBox x:Name="NombresTextBox" Text="{Binding Nombres}" Height="30" VerticalContentAlignment="Center" />
+            <!--——————————————————————————————————————————————[ Apellidos ]——————————————————————————————————————————————-->
+            <Label Content="Apellidos" FontWeight="Bold" Margin="0,0,10,0"/>
+            <TextBox x:Name="ApellidosTextBox" Text="{Binding Apellidos}" Height="30" VerticalContentAlignment="Center" />
+            <!--——————————————————————————————————————————————[ Fecha ]——————————————————————————————————————————————-->
+            <Label Content="Fecha Reserva" FontWeight="Bold"/>
+            <DatePicker x:Name="FechaCreacionDatePicker" SelectedDate="{Binding Fecha}" Height="30" VerticalContentAlignment="Center"/>
+            <!--——————————————————————————————————————————————[ Telefono ]——————————————————————————————————————————————-->
+            <Label Content="Telefono" FontWeight="Bold"/>
+            <TextBox x:Name="TelefonoTextBox" Text="{Binding Telefono}" Height="30" VerticalContentAlignment="Center"/>
+            <!--——————————————————————————————————————————————[ Descripcion ]——————————————————————————————————————————————-->
+            <Label Content="Descripcion" FontWeight="Bold"/>
+            <TextBox x:Name="DescripcionTextBox" Text="{Binding Descripcion}" Height="30" VerticalContentAlignment="Center"/>
+
+
+
+            <!--——————————————————————————————————————————————[ BOTON NUEVO ]——————————————————————————————————————————————-->
+            <StackPanel Orientation="Horizontal" Height="35" Margin="0,15,0,0" HorizontalAlignment="Center">
+                <Button x:Name="NuevoButton" Click="NuevoButton_Click" Width="120">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/UI/Registros/boton-agregar.png"/>
+                        <Label Content="Nuevo" FontSize="17" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+                <!--——————————————————————————————————————————————[ BOTON GUARDAR ]——————————————————————————————————————————————-->
+                <Button x:Name="GuardarButton" Click="GuardarButton_Click" Width="120" Margin="50,0,0,0" >
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/UI/Registros/boton-guardar-archivo.png"/>
+                        <Label Content="Guardar" FontSize="17" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+                <!--——————————————————————————————————————————————[ BOTON ELIMINAR ]——————————————————————————————————————————————-->
+                <Button x:Name="EliminarButton" Click="EliminarButton_Click" Width="120" Margin="50,0,0,0" >
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/UI/Registros/eliminar.png"/>
+                        <Label Content="Eliminar" FontSize="17" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+        </StackPanel>
+        
+    </Grid>
+</Window>
